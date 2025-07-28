@@ -13,7 +13,6 @@ Welcome to my digital time capsule! This isn't your average portfolio – this i
 - **OS**: Any modern browser (Chrome 90+, Firefox 88+, Safari 14+)
 - **RAM**: 640KB ought to be enough for anybody
 - **Graphics**: 256 colors recommended for authentic experience
-- **Sound**: Sound Blaster 16 compatible (just kidding, Web Audio API works fine)
 
 ## 🚀 Installation
 
@@ -44,7 +43,6 @@ npm run dev
 ### 📁 Interactive Applications
 - **📄 Resume.exe**: My professional experience in a familiar WordPad-style window
 - **📧 Contact.exe**: Reach out through a retro email client interface
-- **🎵 Sound Control**: Adjust volume with the classic Windows mixer
 - **🖼️ My Projects**: Browse my work in an Explorer-style file manager
 
 ### 🎨 Visual Fidelity
@@ -61,17 +59,7 @@ npm run dev
 | **Styling** | CSS Modules + Styled Components |
 | **State Management** | Zustand (because Redux is too 2010s) |
 | **Build Tool** | Vite (lightning fast, like a 56k modem) |
-| **Audio** | Web Audio API |
 | **Icons** | Custom pixel art + Windows 95 icon extraction |
-
-## 🎯 Easter Eggs
-
-> **🔍 Pro tip**: Try right-clicking on the desktop or double-clicking the recycle bin. You might find some surprises!
-
-- **Secret Soundboard**: Hidden audio controls with classic Windows sounds
-- **Time Travel Clock**: Right-click the system tray clock for different time formats
-- **Retro Screensaver**: Leave the desktop idle for a nostalgic surprise
-- **Hidden Terminal**: Ctrl+Alt+T opens a command prompt (shhh!)
 
 ## 📸 Screenshots
 
@@ -80,10 +68,6 @@ npm run dev
   <br>
   <em>Behold! The glorious Windows 95 desktop in all its pixelated perfection</em>
 </div>
-
-## 🎵 Sound Credits
-
-All Windows 95 system sounds recreated using Web Audio API. Original sounds © Microsoft Corporation. This is a tribute project for educational/portfolio purposes.
 
 ## 📝 License
 
