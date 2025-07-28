@@ -1,6 +1,6 @@
 import { Button, Fieldset, Modal, RadioButton, TitleBar } from "@react95/core";
 import { Computer3 } from "@react95/icons";
-import React, { useState, type ComponentType } from "react";
+import { useState, type ComponentType } from "react";
 import { useAuth } from "../store/auth";
 import Sound from "../utils/Sound";
 

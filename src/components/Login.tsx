@@ -1,6 +1,6 @@
 import { Button, Input, Modal, TitleBar } from "@react95/core";
 import { Keys } from "@react95/icons";
-import React, { type ComponentType } from "react";
+import { type ComponentType } from "react";
 import { useAuth } from "../store/auth";
 
 function Login() {

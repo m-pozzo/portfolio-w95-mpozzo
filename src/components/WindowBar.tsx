@@ -9,7 +9,7 @@ import {
   Mail
 } from "@react95/icons";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Shutdown from "./Shutdown";
 import { useWindowsStore } from "../store/windows";
 
