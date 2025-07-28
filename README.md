@@ -75,7 +75,11 @@ npm run dev
 
 ## 📸 Screenshots
 
-*Coming soon! Currently rendering in 320x240 for maximum authenticity...*
+<div align="center">
+  <img src="./public/Windows 95.png" alt="Windows 95 Desktop Screenshot" width="800" />
+  <br>
+  <em>Behold! The glorious Windows 95 desktop in all its pixelated perfection</em>
+</div>
 
 ## 🎵 Sound Credits
 
