@@ -6,8 +6,8 @@ import DesktopIcon from "./components/DesktopIcon";
 import Contact from "./components/Contact";
 import { Amovie2, Inetcpl1313, Joy102, Wordpad, Mail } from "@react95/icons";
 import { Video } from "@react95/core";
-import { Chessboard } from "react-chessboard";
 import Resume from "./components/Resume";
+import Game from "./components/Game";
 
 function App() {
   const authinicated = useAuth((state) => state.authinicated);
@@ -33,7 +33,7 @@ function App() {
              <Resume/>
             </DesktopIcon>
             <DesktopIcon width={400} height={400} icon={<Joy102 variant="32x32_4"/>} name="Game">
-             <Chessboard />
+             <Game/>
             </DesktopIcon>
             <DesktopIcon width={400} icon={<Mail variant="32x32_4"/>} name="Contact">
              <Contact/>
