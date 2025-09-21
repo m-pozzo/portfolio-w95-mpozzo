@@ -1,4 +1,4 @@
-<div align="center">
+<!-- <div align="center">
   <img src="./public/logo.png" alt="Windows 95 Portfolio" width="200" height="200" />
 </div>
 
@@ -117,4 +117,4 @@ Hi! I'm the developer who clearly spent way too much time perfecting the Windows
 <p align="center">
   <i>"Have you tried turning it off and on again?"</i><br>
   - Every Windows 95 user, ever
-</p>
+</p> -->

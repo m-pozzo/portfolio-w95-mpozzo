@@ -1,47 +1,89 @@
 import { AGENTS, ClippyProvider } from "@react95/clippy";
-import Login from "./components/Login";
+// import Login from "./components/Login";
 import WindowBar from "./components/WindowBar";
-import { useAuth } from "./store/auth";
+// import { useAuth } from "./store/auth";
 import DesktopIcon from "./components/DesktopIcon";
 import Contact from "./components/Contact";
-import { Amovie2, Inetcpl1313, Joy102, Wordpad, Mail } from "@react95/icons";
-import { Video } from "@react95/core";
+import { Joy102, Mail, Settings, ComputerFind, Mshtml32553 } from "@react95/icons";
 import Resume from "./components/Resume";
 import Game from "./components/Game";
+import Config from "./components/Config";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useWindowsStore } from "./store/windows";
+import { FreeWindow } from './components/FreeWindow';
+import "./App.css"
 
 function App() {
-  const authinicated = useAuth((state) => state.authinicated);
-  return (
-    <div style={{ width: "100%", background: "#098684", minHeight: "100vh",position:"relative" }}>
-      <img src="/logo.png" width={400} style={{position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-70%)"}}/>
-      {!authinicated && <Login />}
+  const { openWindow, isWindowOpen, closeWindow } = useWindowsStore();
 
-      {authinicated && (
-        <ClippyProvider agentName={AGENTS.MERLIN}>
-          <div className="fixed">
-            <DesktopIcon icon={<Amovie2 variant="32x32_4"/>} name="Video">
-              <Video
-                w="420px"
-                src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-                
-              />
-            </DesktopIcon>
-            <DesktopIcon icon={<Inetcpl1313 variant="32x32_4"/>} name="Browser">
-             <iframe width={800} height={500} src="https://swisscows.com"/>
-            </DesktopIcon>
-            <DesktopIcon width={650} icon={<Wordpad variant="32x32_4"/>} name="Resume">
-             <Resume/>
-            </DesktopIcon>
-            <DesktopIcon width={400} height={400} icon={<Joy102 variant="32x32_4"/>} name="Game">
-             <Game/>
-            </DesktopIcon>
-            <DesktopIcon width={400} icon={<Mail variant="32x32_4"/>} name="Contact">
-             <Contact/>
-            </DesktopIcon>
-          </div>
-          <WindowBar />
-        </ClippyProvider>
-      )}
+  const handleOpen = (id: string) => {
+    openWindow(id);
+  }
+
+  const bgArr = ['bg0', 'bg1', 'bg2', 'bg3', 'bg4']
+  const [index, setIndex] = useState(0);
+
+  const cambiarFondo = () => {
+    setIndex((index + 1) % bgArr.length);
+  }
+
+  const { t } = useTranslation();
+
+  return (
+    <div style={{ width: "100%", minHeight: "100vh", position: "relative" }} className={bgArr[index]}>
+      {/* <img src="/img/logo.png" width={400} style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-70%)" }} /> */}
+      {/* {!authinicated && <Login />} */}
+
+      {/* {authinicated && ( */}
+      <ClippyProvider agentName={AGENTS.ROVER}>
+        <div className="fixed">
+
+          <DesktopIcon width={650} icon={<ComputerFind variant="32x32_4" />} name={t("sobreMi.p1")}>
+            <Resume handleOpen={handleOpen} />
+          </DesktopIcon>
+          {
+            isWindowOpen("Certificado-WebDev") && (
+              <FreeWindow
+                title={t("sobreMi.p40")}
+                icon={<Mshtml32553 variant="32x32_4" />}
+                onClose={() => closeWindow("Certificado-WebDev")}
+                width={625}
+              >
+                <img src="./img/desarrolloweb-certificado.jpg" alt="Certificado del curso de desarrollo web" loading="lazy"/>
+              </FreeWindow>
+            )
+          }
+
+          {
+            isWindowOpen("CertificadoJS") && (
+              <FreeWindow
+                title={t("sobreMi.p41")}
+                icon={<Mshtml32553 variant="32x32_4" />}
+                onClose={() => closeWindow("CertificadoJS")}
+                width={625}
+              >
+                <img src="./img/javascript-certificado.jpg" alt="Certificado del curso de Javascript" loading="lazy"/>
+              </FreeWindow>
+            )
+          }
+
+
+          <DesktopIcon width={400} height={400} icon={<Joy102 variant="32x32_4" />} name="Game">
+            <Game />
+          </DesktopIcon>
+
+          <DesktopIcon width={400} icon={<Mail variant="32x32_4" />} name={t("contact.p1")}>
+            <Contact />
+          </DesktopIcon>
+
+          <DesktopIcon icon={<Settings variant="32x32_4" />} name={t("conf.p6")}>
+            <Config cambiarFondo={cambiarFondo} />
+          </DesktopIcon>
+        </div>
+        <WindowBar />
+      </ClippyProvider>
+      {/* )} */}
     </div>
   );
 }

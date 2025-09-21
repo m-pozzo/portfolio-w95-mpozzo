@@ -1,1 +1,285 @@
+/* SOBRE MI */
 
+.sobremi_biografia_header {
+    display: flex;
+    flex-direction: row;
+}
+
+.sobremi_foto_perfil {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    transition: all 0.5s;
+}
+
+.sobremi_foto_perfil:hover {
+    animation: rainbowShadow 1s infinite;
+    /* border-radius: 50 */
+}
+
+.sobremi_title {
+    font-size: 30px;
+    margin: 10px;
+}
+
+.sobremi_subtitle {
+    margin: 10px;
+    font-size: 20px;
+}
+
+.sobremi_proyectos_imagen {
+    width: 180px;
+    float: right;
+    object-fit: cover;
+}
+
+.sobremi_proyectos_imagen:nth-child(1) {
+    margin: 12px;
+}
+
+.sobremi_proyectos_imagen:nth-child(3) {
+    border-radius: 10px;
+    margin: 3px 12px;
+}
+
+.sobremi_button {
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+}
+
+/* CONFIG */
+
+.bg0 {
+    background-color: #098684;
+}
+
+.bg1 {
+    background-image: url('../img/fondo1.jpg');
+    background-size: cover;
+}
+
+.bg2 {
+    background-image: url('../img/fondo2.jpg');
+    background-size: cover;
+
+}
+
+.bg3 {
+    background-size: cover;
+    background-image: url('../img/fondo3.jpg');
+}
+
+.bg4 {
+    background-size: cover;
+    background-image: url('../img/fondo4.jpg');
+}
+
+.bg5 {
+    background-size: cover;
+    background-image: url('../img/fondo1.jpg');
+}
+
+.config_button {
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+}
+
+
+/* TASKBAR */
+
+.mi-taskbar {
+    padding: 6px;
+}
+
+.mi-taskbar>div:last-child {
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+/* VENTANAS */
+.mymodal {
+    width: 100%;
+}
+
+.mymodal>div:last-child {
+    /* width: 10px; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    max-width: 800px; */
+    width: 100%;
+}
+
+.mymodal>div:last-child>img {
+    width: 100%;
+}
+
+
+
+@media (max-width: 450px) {
+    .sobremi_biografia_container {
+        overflow-y: scroll;
+        height: 370px;
+    }
+
+    .sobremi_biografia_header {
+        align-items: center;
+    }
+
+    .sobremi_foto_perfil {
+        width: 100px;
+        height: 100px;
+    }
+
+    .sobremi_title {
+        font-size: 22px;
+    }
+
+    .sobremi_subtitle {
+        font-size: 16px;
+    }
+
+    .sobremi_biografia_p {
+        font-size: 14.5px;
+    }
+
+    .sobremi_button_container {
+        flex-direction: column;
+        width: fit-content
+    }
+
+    .sobremi_button {
+        font-size: 14px;
+    }
+
+    .sobremi_proyectos_imagen {
+        display: none;
+    }
+
+    .sobremi_project_title {
+        font-size: 16px;
+    }
+
+    .sobremi_project_p {
+        font-size: 14px;
+    }
+
+    .desktopModal {
+        width: 95%;
+    }
+
+    .desktopModal>div:last-child {
+        width: 95%;
+    }
+
+    .resumeTab {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .mymodal {
+        width: 95%;
+    }
+
+    .mymodal>div:last-child {
+        /* width: 10px; */
+        /* display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    max-width: 800px; */
+        width: 100%;
+    }
+
+    .mymodal>div:last-child>img {
+        width: 95%;
+    }
+
+}
+
+
+
+@keyframes rainbowShadow {
+    0% {
+        box-shadow: 0 2px 14px 3px rgb(255, 0, 0, 0.8)
+    }
+
+    15% {
+        box-shadow: 0 2px 14px 3px rgba(255, 136, 0, 0.8)
+    }
+
+    30% {
+        box-shadow: 0 2px 14px 3px rgb(255, 230, 0, 0.8)
+    }
+
+    45% {
+        box-shadow: 0 2px 14px 3px rgb(136, 255, 0, 0.8)
+    }
+
+    60% {
+        box-shadow: 0 2px 14px 3px rgb(0, 162, 255, 0.8)
+    }
+
+    75% {
+        box-shadow: 0 2px 14px 3px rgb(140, 0, 255, 0.8)
+    }
+
+    100% {
+        box-shadow: 0 2px 14px 3px rgba(255, 0, 255, 0.8)
+    }
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    /* Typical Win95 scrollbar width */
+    height: 12px;
+    /* For horizontal scrollbars */
+    background-color: #C3C6CB;
+    /* Light gray background for the track */
+    border: 1px solid #DFDFDF;
+    /* Match the track color */
+}
+
+/* Style the scrollbar track (the fixed portion) */
+::-webkit-scrollbar-track {
+    background-color: #d6d6d6;
+    border-top: 1px solid #FFFFFF;
+    /* Highlight */
+    border-left: 1px solid #FFFFFF;
+    /* Highlight */
+    border-right: 1px solid #808080;
+    /* Shadow */
+    border-bottom: 1px solid #808080;
+    /* Shadow */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+    background-color: #cacaca;
+    /* Gray color for the thumb */
+    border-top: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+}
+
+/* Style the scrollbar buttons (arrows at the ends) */
+::-webkit-scrollbar-button {
+    background-color: #cacaca;
+    border-top: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+    height: 16px;
+    /* Standard button height */
+    width: 16px;
+    /* Standard button width */
+}
+
+/* Style the corner where scrollbars meet */
+::-webkit-scrollbar-corner {
+    background-color: #DFDFDF;
+}

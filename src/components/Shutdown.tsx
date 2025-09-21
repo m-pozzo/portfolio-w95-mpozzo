@@ -2,9 +2,10 @@ import { Button, Fieldset, Modal, RadioButton, TitleBar } from "@react95/core";
 import { Computer3 } from "@react95/icons";
 import { useState, type ComponentType } from "react";
 import { useAuth } from "../store/auth";
+import { useTranslation } from "react-i18next";
 import Sound from "../utils/Sound";
 
-type ShutdownOption = "shutdown" | "restart" | "restart-incompatible";
+type ShutdownOption = "shutdown" | "restart";
 
 interface ShutdownProps {
   close: () => void;
@@ -27,11 +28,13 @@ function Shutdown({ close }: ShutdownProps) {
     }
   };
 
+  const {t} = useTranslation();
+
   return (
     <>
       <SafeModal
         icon={<Computer3 variant="32x32_4" />}
-        title="Shut Down Windows"
+        title={t("wBar.p7")}
         style={{
           left: "50%",
           top: "50%",
@@ -44,14 +47,14 @@ function Shutdown({ close }: ShutdownProps) {
             <div className="flex items-start">
               <Computer3 variant="32x32_4" style={{ marginRight: "1rem" }} />
               <div style={{ flexGrow: 1 }}>
-                <p style={{ marginTop: 0 }}>Are you sure you want to:</p>
+                <p style={{ marginTop: 0 }}>{t("wBar.p2")}</p>
                 <RadioButton
                   name="shutdown"
                   value="shutdown"
                   checked={selectedOption === "shutdown"}
                   onChange={() => setSelectedOption("shutdown")}
                 >
-                  Shut down the computer?
+                  {t("wBar.p3")}
                 </RadioButton>
                 <RadioButton
                   name="shutdown"
@@ -59,15 +62,7 @@ function Shutdown({ close }: ShutdownProps) {
                   checked={selectedOption === "restart"}
                   onChange={() => setSelectedOption("restart")}
                 >
-                  Restart the computer?
-                </RadioButton>
-                <RadioButton
-                  name="shutdown"
-                  value="restart-incompatible"
-                  checked={selectedOption === "restart-incompatible"}
-                  onChange={() => setSelectedOption("restart-incompatible")}
-                >
-                  Restart the computer in MS-DOS mode?
+                  {t("wBar.p4")}
                 </RadioButton>
               </div>
             </div>
@@ -75,12 +70,12 @@ function Shutdown({ close }: ShutdownProps) {
           <Fieldset style={{ padding: "0.5rem", margin: "0.5rem" }}>
             <div className="flex items-center justify-center gap-2">
               <Button onClick={handleConfirm} style={{ width: "90px" }}>
-                Yes
+                {t("wBar.p5")}
               </Button>
               <Button onClick={close} style={{ width: "90px" }}>
                 No
               </Button>
-              <Button style={{ width: "90px" }}>Help</Button>
+              <Button style={{ width: "90px" }}>{t("wBar.p6")}</Button>
             </div>
           </Fieldset>
         </Modal.Content>

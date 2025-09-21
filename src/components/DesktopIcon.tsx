@@ -94,6 +94,7 @@ const Window = ({ title, onClose, children, icon, width, height }:WindowProps) =
           onClick={onClose}
         />,
       ]}
+      className="desktopModal"
     >
       <Modal.Content width={`${width}px`} height={`${height}px`}>
         {children}
