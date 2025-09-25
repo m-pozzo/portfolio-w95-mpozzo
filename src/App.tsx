@@ -13,6 +13,7 @@ import { useTranslation } from "react-i18next";
 import { useWindowsStore } from "./store/windows";
 import { FreeWindow } from './components/FreeWindow';
 import "./App.css"
+import "./crtEffect.css"
 
 function App() {
   const { openWindow, isWindowOpen, closeWindow } = useWindowsStore();
@@ -21,12 +22,22 @@ function App() {
     openWindow(id);
   }
 
+
+
   const bgArr = ['bg0', 'bg1', 'bg2', 'bg3', 'bg4']
   const [index, setIndex] = useState(0);
 
   const cambiarFondo = () => {
     setIndex((index + 1) % bgArr.length);
   }
+
+
+
+  const [crt, setCrt] = useState(true);
+  const handleCrt = () => {
+    setCrt(!crt);
+  }
+
 
   const { t } = useTranslation();
 
@@ -42,6 +53,7 @@ function App() {
           <DesktopIcon width={650} icon={<ComputerFind variant="32x32_4" />} name={t("sobreMi.p1")}>
             <Resume handleOpen={handleOpen} />
           </DesktopIcon>
+          
           {
             isWindowOpen("Certificado-WebDev") && (
               <FreeWindow
@@ -50,7 +62,7 @@ function App() {
                 onClose={() => closeWindow("Certificado-WebDev")}
                 width={625}
               >
-                <img src="./img/desarrolloweb-certificado.jpg" alt="Certificado del curso de desarrollo web" loading="lazy"/>
+                <img src="./img/desarrolloweb-certificado.jpg" alt="Certificado del curso de desarrollo web" loading="lazy" />
               </FreeWindow>
             )
           }
@@ -63,7 +75,7 @@ function App() {
                 onClose={() => closeWindow("CertificadoJS")}
                 width={625}
               >
-                <img src="./img/javascript-certificado.jpg" alt="Certificado del curso de Javascript" loading="lazy"/>
+                <img src="./img/javascript-certificado.jpg" alt="Certificado del curso de Javascript" loading="lazy" />
               </FreeWindow>
             )
           }
@@ -78,13 +90,17 @@ function App() {
           </DesktopIcon>
 
           <DesktopIcon icon={<Settings variant="32x32_4" />} name={t("conf.p6")}>
-            <Config cambiarFondo={cambiarFondo} />
+            <Config cambiarFondo={cambiarFondo} activarCrt={handleCrt} crt={crt} />
           </DesktopIcon>
         </div>
         <WindowBar />
       </ClippyProvider>
-      {/* )} */}
+      <div className={`${crt ? "crt": null}`}>
+      </div>
+      <div className={`${crt ? "crt-scanline": null}`}></div>
+
     </div>
+
   );
 }
 

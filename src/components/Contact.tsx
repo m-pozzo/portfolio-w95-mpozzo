@@ -12,11 +12,11 @@ const contactLinks = [
 ];
 
 const Contact = () => (
-  <Frame bg="white" boxShadow="in" style={{ padding: 24, minWidth: 320 }}>
+  <Frame  boxShadow="in" style={{ padding: 24}}>
     <h2 style={{ marginTop: 0, marginBottom: 16, fontSize: 22, color: '#222' }}>Contact Me</h2>
-    <List>
+    <List style={{width: "100%"}}>
       {contactLinks.map(({ icon, label, url }) => (
-        <List.Item key={label} icon={icon}>
+        <List.Item key={label} icon={icon} style={{width: "100%"}}>
           <a href={url} target="_blank" style={{ textDecoration: 'none', color: '#222'}}>
             {label}
           </a>

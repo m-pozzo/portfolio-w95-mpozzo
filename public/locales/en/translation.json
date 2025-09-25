@@ -5,7 +5,9 @@
         "p3": "Language",
         "p4": "Spanish",
         "p5": "English",
-        "p6": "Settings"
+        "p6": "Settings",
+        "p7": "Activate",
+        "p8": "Desactivate"
     },
     "contact": {
         "p1": "Contact",

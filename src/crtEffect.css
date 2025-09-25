@@ -1,0 +1,63 @@
+:root {
+    --crt-background: #0f1419;
+    --crt-glow-color: rgba(0,150,150,.12);
+    --crt-scanline-opacity: 0.15;
+    --crt-scanline-width: 1px;
+    --crt-scanline-gap: 1px;
+    --crt-moving-scanline-color: hsla(0,0%,100%,.15);
+    --crt-flicker-opacity: 0.01;
+}
+
+
+.crt:before {
+    background: repeating-linear-gradient(0deg,rgba(0,0,0,var(--crt-scanline-opacity)),rgba(0,0,0,var(--crt-scanline-opacity)) var(--crt-scanline-width),transparent var(--crt-scanline-width),transparent calc(var(--crt-scanline-width) + var(--crt-scanline-gap)));
+    content: "";
+    display: block;
+    height: 100%;
+    inset: 0;
+    mix-blend-mode: multiply;
+    opacity: .7;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    z-index: 100000
+}
+
+.crt-effect:after {
+    background: repeating-linear-gradient(90deg,rgba(0,0,0,calc(var(--crt-scanline-opacity)*.7)),rgba(0,0,0,calc(var(--crt-scanline-opacity)*.7)) var(--crt-scanline-width),transparent var(--crt-scanline-width),transparent calc(var(--crt-scanline-width) + var(--crt-scanline-gap)));
+    content: "";
+    display: block;
+    height: 100%;
+    inset: 0;
+    mix-blend-mode: multiply;
+    opacity: .7;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    z-index: 100000
+}
+
+
+.crt-scanline {
+    background: linear-gradient(180deg,hsla(0,0%,100%,.01),hsla(0,0%,100%,.2) 50%,hsla(0,0%,100%,.01));
+    box-shadow: 0 0 2px hsla(0, 0%, 100%, 0.247);
+    content: "";
+    height: .6px;
+    left: 0;
+    mix-blend-mode: screen;
+    opacity: .3;
+    pointer-events: none;
+    position: fixed;
+    top: -20px;
+    animation: scanline 1.5s infinite;
+    width: 100%;
+    z-index: 100001
+}
+
+@keyframes scanline {
+    from {
+        transform: translateY(0vh);
+    }to {
+        transform: translateY(99vh);
+    }
+}

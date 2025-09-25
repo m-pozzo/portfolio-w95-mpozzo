@@ -2,10 +2,8 @@ import { List, TaskBar } from "@react95/core";
 import {
   Computer3,
   Settings,
-  Amovie2,
   Joy102,
-  Inetcpl1313,
-  Wordpad,
+  ComputerFind,
   Mail
 } from "@react95/icons";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
@@ -65,21 +63,9 @@ function WindowBar() {
               icon={<Settings variant="32x32_4" />}>
               Configuración
             </List.Item>
-            {/* <List.Item
-              onClick={() => openWindow("Browser")}
-              icon={<Inetcpl1313 variant="32x32_4" />}
-            >
-              Browser
-            </List.Item>
-            <List.Item
-              onClick={() => openWindow("Video")}
-              icon={<Amovie2 variant="32x32_4" />}
-            >
-              Video
-            </List.Item> */}
             <List.Item
               onClick={() => openWindow(t("sobreMi.p1"))}
-              icon={<Wordpad variant="32x32_4" />}
+              icon={<ComputerFind variant="32x32_4" />}
             >
               {t("sobreMi.p1")}
             </List.Item>

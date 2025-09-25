@@ -4,10 +4,12 @@ import React from "react";
 
 type ConfigProps = {
     cambiarFondo: () => void; // función sin parámetros que no devuelve nada
+    activarCrt: () => void;
+    crt: boolean;
 };
 
 
-function Config({ cambiarFondo }: ConfigProps) {
+function Config({ cambiarFondo, activarCrt, crt }: ConfigProps) {
     const { i18n, t } = useTranslation();
 
     const languages = [
@@ -20,7 +22,6 @@ function Config({ cambiarFondo }: ConfigProps) {
     const changeLanguage = (lng: string) => {
         i18n.changeLanguage(lng);
         setSelectedOption(lng);
-        console.log(lng)
     };
 
     return (
@@ -42,6 +43,22 @@ function Config({ cambiarFondo }: ConfigProps) {
                     </RadioButton>
                 ))}
             </Fieldset >
+            <br />
+            <Fieldset legend="CRT">
+                <RadioButton
+                    checked={crt}
+                    onChange={() => activarCrt()}
+                >
+
+                    {t("conf.p7")}
+                </RadioButton>
+                <RadioButton
+                    checked={!crt}
+                    onChange={() => activarCrt()}
+                >
+                    {t("conf.p8")}
+                </RadioButton>
+            </Fieldset>
         </>
     );
 }

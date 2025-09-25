@@ -100,7 +100,7 @@
 
 /* VENTANAS */
 .mymodal {
-    width: 100%;
+    width: 450px;
 }
 
 .mymodal>div:last-child {
@@ -110,11 +110,7 @@
     justify-content: center;
     min-width: 100px;
     max-width: 800px; */
-    width: 100%;
-}
-
-.mymodal>div:last-child>img {
-    width: 100%;
+    width: 99%;
 }
 
 
@@ -200,6 +196,9 @@
 
 }
 
+@media (max-width:375px) {
+
+}
 
 
 @keyframes rainbowShadow {
@@ -234,39 +233,28 @@
 
 ::-webkit-scrollbar {
     width: 12px;
-    /* Typical Win95 scrollbar width */
     height: 12px;
-    /* For horizontal scrollbars */
     background-color: #C3C6CB;
-    /* Light gray background for the track */
     border: 1px solid #DFDFDF;
-    /* Match the track color */
 }
 
-/* Style the scrollbar track (the fixed portion) */
+
 ::-webkit-scrollbar-track {
     background-color: #d6d6d6;
     border-top: 1px solid #FFFFFF;
-    /* Highlight */
     border-left: 1px solid #FFFFFF;
-    /* Highlight */
     border-right: 1px solid #808080;
-    /* Shadow */
     border-bottom: 1px solid #808080;
-    /* Shadow */
 }
 
-/* Style the scrollbar thumb (the draggable part) */
 ::-webkit-scrollbar-thumb {
     background-color: #cacaca;
-    /* Gray color for the thumb */
     border-top: 1px solid #FFFFFF;
     border-left: 1px solid #FFFFFF;
     border-right: 1px solid #808080;
     border-bottom: 1px solid #808080;
 }
 
-/* Style the scrollbar buttons (arrows at the ends) */
 ::-webkit-scrollbar-button {
     background-color: #cacaca;
     border-top: 1px solid #FFFFFF;
@@ -274,12 +262,9 @@
     border-right: 1px solid #808080;
     border-bottom: 1px solid #808080;
     height: 16px;
-    /* Standard button height */
     width: 16px;
-    /* Standard button width */
 }
 
-/* Style the corner where scrollbars meet */
 ::-webkit-scrollbar-corner {
     background-color: #DFDFDF;
 }
