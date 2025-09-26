@@ -4,9 +4,10 @@ import {
   Settings,
   Joy102,
   ComputerFind,
-  Mail
+  Mail,
+  Wordpad
 } from "@react95/icons";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin} from "react-icons/fa";
 import { useEffect, useState } from "react";
 import Shutdown from "./Shutdown";
 import { useWindowsStore } from "../store/windows";
@@ -68,6 +69,12 @@ function WindowBar() {
               icon={<ComputerFind variant="32x32_4" />}
             >
               {t("sobreMi.p1")}
+            </List.Item>
+            <List.Item
+            onClick={() => openWindow("Resume")}
+            icon={<Wordpad variant="32x32_4"/>}
+            >
+              Resume
             </List.Item>
             <List.Divider />
             <List.Item

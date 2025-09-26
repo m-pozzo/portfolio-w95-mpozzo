@@ -131,8 +131,8 @@ function Resume({ handleOpen }: ResumeProps) {
             <Fieldset legend={t("sobreMi.p25")}>
               <ul>
                 <li className="resume-skills">JavaScript (ES6+)</li>
-                <li className="resume-skills">React.js</li>
-                <li className="resume-skills">Node.js</li>
+                <li className="resume-skills">React JS</li>
+                <li className="resume-skills">Node JS</li>
                 <li className="resume-skills">C++</li>
                 <li className="resume-skills">Godot Engine</li>
               </ul>

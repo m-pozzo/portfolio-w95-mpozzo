@@ -4,7 +4,7 @@ import WindowBar from "./components/WindowBar";
 // import { useAuth } from "./store/auth";
 import DesktopIcon from "./components/DesktopIcon";
 import Contact from "./components/Contact";
-import { Joy102, Mail, Settings, ComputerFind, Mshtml32553 } from "@react95/icons";
+import { Joy102, Mail, Settings, ComputerFind, Mshtml32553, Wordpad } from "@react95/icons";
 import Resume from "./components/Resume";
 import Game from "./components/Game";
 import Config from "./components/Config";
@@ -91,6 +91,12 @@ function App() {
 
           <DesktopIcon icon={<Settings variant="32x32_4" />} name={t("conf.p6")}>
             <Config cambiarFondo={cambiarFondo} activarCrt={handleCrt} crt={crt} />
+          </DesktopIcon>
+          
+          <DesktopIcon width={500} height={500} icon={<Wordpad variant="32x32_4"/>} name="Resume">
+            <div style={{width: "100%", height: "100%"}}>
+              <iframe src="./PDF/MartinPozzo_Resume.pdf" style={{width: "100%", height: "100%"}}></iframe>
+            </div>
           </DesktopIcon>
         </div>
         <WindowBar />
