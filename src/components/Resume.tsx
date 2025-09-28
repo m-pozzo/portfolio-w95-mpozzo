@@ -1,6 +1,7 @@
 import { Fieldset, Tab, Tabs, Button } from '@react95/core';
 import { useWindowsStore } from "../store/windows";
 import { useTranslation } from 'react-i18next';
+import { Tag } from './Tag';
 
 type ResumeProps = {
   handleOpen: (id: string) => void;
@@ -46,6 +47,10 @@ function Resume({ handleOpen }: ResumeProps) {
                 <img src="https://valtira.ai/assets/complete_logo.svg" alt="Valtira IA Logo" className='sobremi_proyectos_imagen' loading="lazy" />
                 <div>
                   <h4 className='sobremi_project_title'>{t("sobreMi.p10")}</h4>
+                  <div style={{ display: "flex", gap: "10px" }}>
+                    <Tag name='React JS' />
+                    <Tag name='CSS' />
+                  </div>
                   <p className='sobremi_project_p'>
                     {t("sobreMi.p11")}
                   </p>
@@ -57,6 +62,11 @@ function Resume({ handleOpen }: ResumeProps) {
               <h4 className='sobremi_project_title'>
                 Apeace ( oct 2023 - nov 2023 )
               </h4>
+              <div style={{ display: "flex", gap: "10px" }}>
+                <Tag name='HTML' />
+                <Tag name='CSS' />
+                <Tag name='JavaScript' />
+              </div>
               <p className='sobremi_project_p'>
                 {t("sobreMi.p14")}
               </p>
@@ -73,6 +83,11 @@ function Resume({ handleOpen }: ResumeProps) {
               <h4 className='sobremi_project_title'>
                 {`Muy Uraniana - ${t("sobreMi.p17")}`}
               </h4>
+              <div style={{ display: "flex", gap: "10px" }}>
+                <Tag name='React JS' />
+                <Tag name='JavaScript' />
+                <Tag name='CSS' />
+              </div>
               <p className='sobremi_project_p'>
                 {t("sobreMi.p18")}
               </p>
@@ -82,6 +97,11 @@ function Resume({ handleOpen }: ResumeProps) {
               <h4 className='sobremi_project_title'>
                 {t("sobreMi.p20")}
               </h4>
+              <div style={{ display: "flex", gap: "10px" }}>
+                <Tag name='HTML' />
+                <Tag name='CSS' />
+                <Tag name='JavaScript' />
+              </div>
               <p className='sobremi_project_p'>
                 {t("sobreMi.p21")}
               </p>
@@ -103,6 +123,11 @@ function Resume({ handleOpen }: ResumeProps) {
               <h4 className='sobremi_project_title'>
                 Legendary Motor's Sports
               </h4>
+              <div style={{ display: "flex", gap: "10px" }}>
+                <Tag name='React JS' />
+                <Tag name='JavaScript' />
+                <Tag name='CSS' />
+              </div>
               <p className='sobremi_project_p'>
                 {t("sobreMi.p22")}
               </p>
@@ -113,6 +138,11 @@ function Resume({ handleOpen }: ResumeProps) {
             </Fieldset>
             <Fieldset legend={t("sobreMi.p23")}>
               <h4 className='sobremi_project_title'>SMART AIR</h4>
+              <div style={{ display: "flex", gap: "10px" }}>
+                <Tag name='HTML' />
+                <Tag name='CSS' />
+                <Tag name='JavaScript' />
+              </div>
               <img src="./img/smartair-logo.jpeg" alt="Logo de SMART AIR" className='sobremi_proyectos_imagen' loading="lazy" />
               <div>
                 <p className='sobremi_project_p'>

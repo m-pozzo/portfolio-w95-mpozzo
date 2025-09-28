@@ -48,6 +48,20 @@
     text-decoration: none;
 }
 
+.sobremi_project_title {
+    margin: 10px 0;
+}
+
+.tag {
+    padding: 5px 10px;
+    border-radius: 3px;
+    box-shadow: 1.3px 1px 1px #464545;
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff;
+    /* color: #dbdbdb; */
+    font-size: 14px;
+}
+
 /* CONFIG */
 
 .bg0 {
@@ -90,7 +104,7 @@
 /* TASKBAR */
 
 .mi-taskbar {
-    padding: 6px;
+    padding: 5px;
 }
 
 .mi-taskbar>div:last-child {
