@@ -8,6 +8,7 @@ import { Joy102, Mail, Settings, ComputerFind, Mshtml32553, Wordpad } from "@rea
 import Resume from "./components/Resume";
 import Game from "./components/Game";
 import Config from "./components/Config";
+import { Reproductor } from "./components/Reproductor";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useWindowsStore } from "./store/windows";
@@ -42,7 +43,7 @@ function App() {
   const { t } = useTranslation();
 
   return (
-    <div style={{ width: "100%", minHeight: "100vh", position: "relative" }} className={bgArr[index]}>
+    <div style={{ width: "100%", minHeight: "100vh", position: "relative" }} className={`${bgArr[index]} ${crt ? "crt-brightness" : null}`}>
       {/* <img src="/img/logo.png" width={400} style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-70%)" }} /> */}
       {/* {!authinicated && <Login />} */}
 
@@ -53,7 +54,7 @@ function App() {
           <DesktopIcon width={650} icon={<ComputerFind variant="32x32_4" />} name={t("sobreMi.p1")}>
             <Resume handleOpen={handleOpen} />
           </DesktopIcon>
-          
+
           {
             isWindowOpen("Certificado-WebDev") && (
               <FreeWindow
@@ -81,6 +82,14 @@ function App() {
           }
 
 
+          {/* <DesktopIcon width={400} height={400} icon={<Joy102 variant="32x32_4" />} name="Reproductor">
+            <Reproductor />
+          </DesktopIcon> */}
+{/* 
+          <div id="app" style={{ height: "100vh" }}>
+
+          </div> */}
+
           <DesktopIcon width={400} height={400} icon={<Joy102 variant="32x32_4" />} name="Game">
             <Game />
           </DesktopIcon>
@@ -92,18 +101,17 @@ function App() {
           <DesktopIcon icon={<Settings variant="32x32_4" />} name={t("conf.p6")}>
             <Config cambiarFondo={cambiarFondo} activarCrt={handleCrt} crt={crt} />
           </DesktopIcon>
-          
-          <DesktopIcon width={500} height={500} icon={<Wordpad variant="32x32_4"/>} name="Resume">
-            <div style={{width: "100%", height: "100%"}}>
-              <iframe src="./PDF/MartinPozzo_Resume.pdf" style={{width: "100%", height: "100%"}}></iframe>
+
+          <DesktopIcon width={500} height={500} icon={<Wordpad variant="32x32_4" />} name="Resume">
+            <div style={{ width: "100%", height: "100%" }}>
+              <iframe src="./PDF/MartinPozzo_Resume.pdf" style={{ width: "100%", height: "100%" }}></iframe>
             </div>
           </DesktopIcon>
         </div>
         <WindowBar />
       </ClippyProvider>
-      <div className={`${crt ? "crt": null}`}>
-      </div>
-      <div className={`${crt ? "crt-scanline": null}`}></div>
+      <div className={`${crt ? "crt" : null}`}></div>
+      <div className={`${crt ? "crt-scanline" : null}`}></div>
 
     </div>
 

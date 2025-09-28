@@ -38,9 +38,15 @@
 }
 
 
+.crt-brightness {
+    filter: brightness(1.15);
+    overflow: hidden;
+}
+
+
 .crt-scanline {
     background: linear-gradient(180deg,hsla(0,0%,100%,.01),hsla(0,0%,100%,.2) 50%,hsla(0,0%,100%,.01));
-    box-shadow: 0 0 2px hsla(0, 0%, 100%, 0.247);
+    box-shadow: 0 0 2px hsla(0, 0%, 100%, 0.199);
     content: "";
     height: .6px;
     left: 0;
@@ -49,7 +55,7 @@
     pointer-events: none;
     position: fixed;
     top: -20px;
-    animation: scanline 1.5s infinite;
+    animation: scanline 1.8s infinite;
     width: 100%;
     z-index: 100001
 }
