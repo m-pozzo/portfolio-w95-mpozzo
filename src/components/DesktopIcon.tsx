@@ -1,7 +1,8 @@
 // DesktopIcon.js
-import React, { type ReactElement, type ReactNode,type ComponentType } from "react";
+import React, { type ReactElement, type ReactNode, type ComponentType, useState } from "react";
 import { Modal, TitleBar, useModal } from "@react95/core";
 import { useWindowsStore } from "../store/windows";
+import WebampPlayer from "./WebampPlayer";
 
 // Centralized style objects for maintainability and clarity
 const styles = {
@@ -73,9 +74,9 @@ interface WindowProps {
   children: ReactNode;
   width?: number;
   height?: number;
-  onClose:()=>void;
+  onClose: () => void;
 }
-const Window = ({ title, onClose, children, icon, width, height }:WindowProps) => {
+const Window = ({ title, onClose, children, icon, width, height }: WindowProps) => {
   const { minimize } = useModal();
   return (
     <SafeModal
@@ -108,38 +109,47 @@ const Window = ({ title, onClose, children, icon, width, height }:WindowProps) =
  */
 
 interface DesktopIconProps {
+  id: string,
   icon: ReactElement<{ variant?: string }>;
-  name:string;
+  name: string;
   children: ReactNode;
   width?: number;
   height?: number;
 }
 
+
+
+
 const DesktopIcon = ({
+  id,
   icon,
   name,
   children,
   width,
   height,
 }: DesktopIconProps) => {
+  const [isWebampOpen, setIsWebampOpen] = useState(false);
   const { openWindow, closeWindow, isWindowOpen } = useWindowsStore();
-  const isOpen = isWindowOpen(name);
+  const isOpen = isWindowOpen(id);
 
-  const handleDoubleClick = () => {
-    openWindow(name);
+  const handleClick = () => {
+    openWindow(id);
+    if (id === "reproductor") {
+      setIsWebampOpen(prev => !prev); // toggle
+    }
   };
 
   const handleCloseWindow = () => {
-    closeWindow(name);
+    closeWindow(id);
   };
 
   return (
     <>
-      <div style={styles.desktopIcon} onDoubleClick={handleDoubleClick}>
+      <div style={styles.desktopIcon} onClick={handleClick}>
         {React.cloneElement(icon, { variant: "32x32_4" })}
         <p style={styles.iconName}>{name}</p>
       </div>
-      {isOpen && (
+      {isOpen && id !== "reproductor" && (
         <Window
           width={width}
           height={height}
@@ -149,6 +159,9 @@ const DesktopIcon = ({
         >
           {children}
         </Window>
+      )}
+      {id === "reproductor" && isWebampOpen && (
+        <WebampPlayer onClose={() => setIsWebampOpen(false)} />
       )}
     </>
   );
