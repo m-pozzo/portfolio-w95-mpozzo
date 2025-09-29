@@ -51,7 +51,7 @@ function WindowBar() {
                   <a href="mailto:martinpozzo.tin@gmail.com" style={{ textDecoration: 'none', color: '#222' }}>Gmail</a>
                 </List.Item>
               </List>
-              Contact
+               {t("contact.p1")}
             </List.Item>
             <List.Item
               onClick={() => openWindow("Game")}
@@ -62,7 +62,7 @@ function WindowBar() {
             <List.Item
               onClick={() => openWindow("Configuración")}
               icon={<Settings variant="32x32_4" />}>
-              Configuración
+               {t("conf.p6")}
             </List.Item>
             <List.Item
               onClick={() => openWindow(t("sobreMi.p1"))}
