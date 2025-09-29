@@ -54,24 +54,24 @@ function WindowBar() {
                {t("contact.p1")}
             </List.Item>
             <List.Item
-              onClick={() => openWindow("Game")}
+              onClick={() => openWindow("game")}
               icon={<Joy102 variant="32x32_4" />}
             >
               Game
             </List.Item>
             <List.Item
-              onClick={() => openWindow("Configuración")}
+              onClick={() => openWindow("config")}
               icon={<Settings variant="32x32_4" />}>
                {t("conf.p6")}
             </List.Item>
             <List.Item
-              onClick={() => openWindow(t("sobreMi.p1"))}
+              onClick={() => openWindow("about")}
               icon={<ComputerFind variant="32x32_4" />}
             >
               {t("sobreMi.p1")}
             </List.Item>
             <List.Item
-            onClick={() => openWindow("Resume")}
+            onClick={() => openWindow("resume")}
             icon={<Wordpad variant="32x32_4"/>}
             >
               Resume

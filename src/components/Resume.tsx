@@ -19,7 +19,7 @@ function Resume({ handleOpen }: ResumeProps) {
         <Tab title={t("sobreMi.p2")}>
           <div className='sobremi_biografia_header' style={{ marginBottom: "20px" }}>
             {/* <Avatar src="/img/pixel-yop.jpg" alt="Foto de Martín Pozzo" size={'180px'} circle={false} /> */}
-            <img src="/img/yop2.jpeg" alt="Foto de Martín Pozzo" className='sobremi_foto_perfil' loading="lazy" />
+            <img src="/img/yop2.jpeg" alt="Foto de Martín Pozzo" className='sobremi_foto_perfil'  />
             <div>
               <h3 className='sobremi_title'>Martín Pozzo</h3>
               <h4 className='sobremi_subtitle'>📍 Argentina, CABA</h4>
@@ -44,7 +44,7 @@ function Resume({ handleOpen }: ResumeProps) {
           <div style={{ overflowY: "scroll", height: "650px" }}>
             <Fieldset legend={t("sobreMi.p9")}>
               <div>
-                <img src="https://valtira.ai/assets/complete_logo.svg" alt="Valtira IA Logo" className='sobremi_proyectos_imagen' loading="lazy" />
+                <img src="https://valtira.ai/assets/complete_logo.svg" alt="Valtira IA Logo" className='sobremi_proyectos_imagen'  />
                 <div>
                   <h4 className='sobremi_project_title'>{t("sobreMi.p10")}</h4>
                   <div style={{ display: "flex", gap: "10px" }}>
@@ -79,7 +79,7 @@ function Resume({ handleOpen }: ResumeProps) {
               </div>
             </Fieldset >
             <Fieldset legend={t("sobreMi.p16")}>
-              <img src="./img/muyUraniana.png" alt="Logo de Muy Uraniana" className='sobremi_proyectos_imagen' height={180} loading="lazy" />
+              <img src="./img/muyUraniana.png" alt="Logo de Muy Uraniana" className='sobremi_proyectos_imagen' height={180}  />
               <h4 className='sobremi_project_title'>
                 {`Muy Uraniana - ${t("sobreMi.p17")}`}
               </h4>
@@ -119,7 +119,7 @@ function Resume({ handleOpen }: ResumeProps) {
               </div>
             </Fieldset>
             <Fieldset legend={t("sobreMi.p16")}>
-              <img src="./img/car.png" alt="Auto" className='sobremi_proyectos_imagen' loading="lazy" />
+              <img src="./img/car.png" alt="Auto" className='sobremi_proyectos_imagen'  />
               <h4 className='sobremi_project_title'>
                 Legendary Motor's Sports
               </h4>
@@ -143,7 +143,7 @@ function Resume({ handleOpen }: ResumeProps) {
                 <Tag name='CSS' />
                 <Tag name='JavaScript' />
               </div>
-              <img src="./img/smartair-logo.jpeg" alt="Logo de SMART AIR" className='sobremi_proyectos_imagen' loading="lazy" />
+              <img src="./img/smartair-logo.jpeg" alt="Logo de SMART AIR" className='sobremi_proyectos_imagen'  />
               <div>
                 <p className='sobremi_project_p'>
                   {t("sobreMi.p24")}

@@ -29,8 +29,6 @@ function App() {
     setIndex((index + 1) % bgArr.length);
   }
 
-
-
   const [crt, setCrt] = useState(true);
   const handleCrt = () => {
     setCrt(!crt);
@@ -60,7 +58,7 @@ function App() {
                 onClose={() => closeWindow("Certificado-WebDev")}
                 width={625}
               >
-                <img src="./img/desarrolloweb-certificado.jpg" alt="Certificado del curso de desarrollo web" loading="lazy" />
+                <img src="./img/desarrolloweb-certificado.jpg" alt="Certificado del curso de desarrollo web" />
               </FreeWindow>
             )
           }
@@ -73,7 +71,7 @@ function App() {
                 onClose={() => closeWindow("CertificadoJS")}
                 width={625}
               >
-                <img src="./img/javascript-certificado.jpg" alt="Certificado del curso de Javascript" loading="lazy" />
+                <img src="./img/javascript-certificado.jpg" alt="Certificado del curso de Javascript" />
               </FreeWindow>
             )
           }
