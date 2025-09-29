@@ -4,11 +4,11 @@ import WindowBar from "./components/WindowBar";
 // import { useAuth } from "./store/auth";
 import DesktopIcon from "./components/DesktopIcon";
 import Contact from "./components/Contact";
-import { Joy102, Mail, Settings, ComputerFind, Mshtml32553, Wordpad } from "@react95/icons";
+import { Joy102, Mail, Settings, ComputerFind, Mshtml32553, Wordpad, Cdplayer107 } from "@react95/icons";
 import Resume from "./components/Resume";
 import Game from "./components/Game";
 import Config from "./components/Config";
-import { Reproductor } from "./components/Reproductor";
+import WebampPlayer from "./components/WebampPlayer";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useWindowsStore } from "./store/windows";
@@ -22,8 +22,6 @@ function App() {
   const handleOpen = (id: string) => {
     openWindow(id);
   }
-
-
 
   const bgArr = ['bg0', 'bg1', 'bg2', 'bg3', 'bg4']
   const [index, setIndex] = useState(0);
@@ -40,7 +38,7 @@ function App() {
   }
 
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <div style={{ width: "100%", minHeight: "100vh", position: "relative" }} className={`${bgArr[index]} ${crt ? "crt-brightness" : null}`}>
@@ -51,7 +49,7 @@ function App() {
       <ClippyProvider agentName={AGENTS.ROVER}>
         <div className="fixed">
 
-          <DesktopIcon width={650} icon={<ComputerFind variant="32x32_4" />} name={t("sobreMi.p1")}>
+          <DesktopIcon id="about" width={650} icon={<ComputerFind variant="32x32_4" />} name={t("sobreMi.p1")}>
             <Resume handleOpen={handleOpen} />
           </DesktopIcon>
 
@@ -85,28 +83,36 @@ function App() {
           {/* <DesktopIcon width={400} height={400} icon={<Joy102 variant="32x32_4" />} name="Reproductor">
             <Reproductor />
           </DesktopIcon> */}
-{/* 
+          {/* 
           <div id="app" style={{ height: "100vh" }}>
 
           </div> */}
 
-          <DesktopIcon width={400} height={400} icon={<Joy102 variant="32x32_4" />} name="Game">
-            <Game />
+          <DesktopIcon id="resume" width={550} height={550} icon={<Wordpad variant="32x32_4" />} name="Resume">
+            <div style={{ width: "100%", height: "100%" }}>
+              {
+                i18n.language == "en" ?
+                  <iframe src="./PDF/CV_MartínPozzo_Ingles.pdf" style={{ width: "100%", height: "100%" }}></iframe>
+                  : <iframe src="./PDF/CV_MartínPozzo_Español.pdf" style={{ width: "100%", height: "100%" }}></iframe>
+              }
+
+            </div>
           </DesktopIcon>
 
-          <DesktopIcon width={400} icon={<Mail variant="32x32_4" />} name={t("contact.p1")}>
-            <Contact />
-          </DesktopIcon>
-
-          <DesktopIcon icon={<Settings variant="32x32_4" />} name={t("conf.p6")}>
+          <DesktopIcon id="config" icon={<Settings variant="32x32_4" />} name={t("conf.p6")}>
             <Config cambiarFondo={cambiarFondo} activarCrt={handleCrt} crt={crt} />
           </DesktopIcon>
 
-          <DesktopIcon width={500} height={500} icon={<Wordpad variant="32x32_4" />} name="Resume">
-            <div style={{ width: "100%", height: "100%" }}>
-              <iframe src="./PDF/MartinPozzo_Resume.pdf" style={{ width: "100%", height: "100%" }}></iframe>
-            </div>
+          <DesktopIcon id="contact" width={400} icon={<Mail variant="32x32_4" />} name={t("contact.p1")}>
+            <Contact />
           </DesktopIcon>
+
+          <DesktopIcon id="game" width={400} height={400} icon={<Joy102 variant="32x32_4" />} name="Game">
+            <Game />
+          </DesktopIcon>
+
+          <DesktopIcon id="reproductor" width={400} height={400} icon={<Cdplayer107 variant="32x32_4" />} name={t("webamp")}/>
+
         </div>
         <WindowBar />
       </ClippyProvider>

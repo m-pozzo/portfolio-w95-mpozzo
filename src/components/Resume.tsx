@@ -1,5 +1,5 @@
 import { Fieldset, Tab, Tabs, Button } from '@react95/core';
-import { useWindowsStore } from "../store/windows";
+// import { useWindowsStore } from "../store/windows";
 import { useTranslation } from 'react-i18next';
 import { Tag } from './Tag';
 
@@ -15,7 +15,7 @@ function Resume({ handleOpen }: ResumeProps) {
   return (
     <>
 
-      <Tabs defaultActiveTab={t("sobreMi.p2")} className='resumeTab'>
+      <Tabs defaultActiveTab={"Biografía"} className='resumeTab'>
         <Tab title={t("sobreMi.p2")}>
           <div className='sobremi_biografia_header' style={{ marginBottom: "20px" }}>
             {/* <Avatar src="/img/pixel-yop.jpg" alt="Foto de Martín Pozzo" size={'180px'} circle={false} /> */}

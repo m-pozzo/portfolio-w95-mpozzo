@@ -1,12 +1,10 @@
-import React from 'react'
-
 type TagProps = {
     name: string;
 }
 
 export const Tag = ({ name }: TagProps) => {
     let bgColor = "";
-    let txtColor = ""
+    let txtColor = "";
 
     const names = [
         { nameArr: "React JS", bgColor: "#1299C4" },
@@ -17,7 +15,7 @@ export const Tag = ({ name }: TagProps) => {
 
     names.map((n) => {
         if (n.nameArr == name) {
-            bgColor = n.bgColor
+            bgColor = n.bgColor;
         }
     })
 

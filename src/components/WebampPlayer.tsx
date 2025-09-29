@@ -11,41 +11,79 @@ const WebampPlayer = ({ onClose }: { onClose: () => void }) => {
       initialTracks: [
         {
           metaData: {
-            artist: "DJ Mike Llama",
-            title: "Llama Whippin' Intro",
+            artist: "Electric Light Orchestra",
+            title: "Last Train to London",
           },
-          // NOTE: Your audio file must be served from the same domain as your HTML
-          // file, or served with permissive CORS HTTP headers:
-          // https://docs.webamp.org/docs/guides/cors
-          url: "https://cdn.jsdelivr.net/gh/captbaritone/webamp@43434d82cfe0e37286dbbe0666072dc3190a83bc/mp3/llama-2.91.mp3",
+          url: "./public/Music/last-train-to-london-audio.mp3",
           duration: 5.322286,
         },
         {
           metaData: {
-            title: "Heroines",
-            artist: "Diablo Swing Orchestra",
+            title: "Virtual Insanity",
+            artist: "Jamiroquai",
           },
-          // NOTE: Your audio file must be served from the same domain as your HTML
-          // file, or served with permissive CORS HTTP headers:
-          // https://docs.webamp.org/docs/guides/cors
-          url: "https://raw.githubusercontent.com/captbaritone/webamp-music/4b556fbf/Diablo_Swing_Orchestra_-_01_-_Heroines.mp3",
+          url: "./public/Music/virtual-insanity.mp3",
           duration: 322.612245,
         },
         {
           metaData: {
-            title: "We Are Going To Eclecfunk Your Ass",
-            artist: "Eclectek",
+            title: "El Ojo Blindado",
+            artist: "Sumo",
           },
-          // NOTE: Your audio file must be served from the same domain as your HTML
-          // file, or served with permissive CORS HTTP headers:
-          // https://docs.webamp.org/docs/guides/cors
-          url: "https://raw.githubusercontent.com/captbaritone/webamp-music/4b556fbf/Eclectek_-_02_-_We_Are_Going_To_Eclecfunk_Your_Ass.mp3",
+          url: "./public/Music/el-ojo-blindado.mp3",
+          duration: 190.093061,
+        },
+        {
+          metaData: {
+            title: "House Burning Down",
+            artist: "Jimi Hendrix",
+          },
+          url: "./public/Music/house-burning-down.mp3",
+          duration: 190.093061,
+        },
+        {
+          metaData: {
+            title: "Without Me",
+            artist: "Eminem",
+          },
+          url: "./public/Music/eminem-without-me.mp3",
+          duration: 190.093061,
+        },
+        {
+          metaData: {
+            title: "Lo Que Sangra",
+            artist: "Soda Estereo",
+          },
+          url: "./public/Music/lo-que-sangra.mp3",
+          duration: 190.093061,
+        },
+        {
+          metaData: {
+            title: "Lamento Boliviano",
+            artist: "Los Enanitos Verdes",
+          },
+          url: "./public/Music/boliviano.mp3",
+          duration: 190.093061,
+        },
+        {
+          metaData: {
+            title: "Oh Qué Será?",
+            artist: "Willie Colón",
+          },
+          url: "./public/Music/oh-que.mp3",
+          duration: 190.093061,
+        },
+        {
+          metaData: {
+            title: "Hunting Soul",
+            artist: "Hayasii",
+          },
+          url: "./public/Music/soul.mp3",
           duration: 190.093061,
         },
       ],
     });
     webamp.renderWhenReady(containerRef.current).then(() => {
-      // Cuando el reproductor ya está montado
       const closeBtn = containerRef.current?.querySelector("#close");
       if (closeBtn) {
         closeBtn.addEventListener("click", handleClose);
@@ -53,11 +91,10 @@ const WebampPlayer = ({ onClose }: { onClose: () => void }) => {
     });
 
     const handleClose = () => {
-      onClose(); // avisamos al padre que se cerró
+      onClose();
     };
 
     return () => {
-      // cleanup: sacamos el eventListener y destruimos webamp
       const closeBtn = containerRef.current?.querySelector("#close");
       if (closeBtn) {
         closeBtn.removeEventListener("click", handleClose);
