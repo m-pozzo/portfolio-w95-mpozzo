@@ -8,7 +8,6 @@ import { Joy102, Mail, Settings, ComputerFind, Mshtml32553, Wordpad, Cdplayer107
 import Resume from "./components/Resume";
 import Game from "./components/Game";
 import Config from "./components/Config";
-import WebampPlayer from "./components/WebampPlayer";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useWindowsStore } from "./store/windows";
@@ -111,7 +110,9 @@ function App() {
             <Game />
           </DesktopIcon>
 
-          <DesktopIcon id="reproductor" width={400} height={400} icon={<Cdplayer107 variant="32x32_4" />} name={t("webamp")}/>
+          <DesktopIcon id="reproductor" width={400} height={400} icon={<Cdplayer107 variant="32x32_4" />} name={t("webamp")}>
+            <span></span>
+          </DesktopIcon>
 
         </div>
         <WindowBar />

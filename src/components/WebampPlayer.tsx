@@ -14,7 +14,7 @@ const WebampPlayer = ({ onClose }: { onClose: () => void }) => {
             artist: "Electric Light Orchestra",
             title: "Last Train to London",
           },
-          url: "./public/Music/last-train-to-london-audio.mp3",
+          url: "/Music/last-train-to-london-audio.mp3",
           duration: 5.322286,
         },
         {
@@ -22,7 +22,7 @@ const WebampPlayer = ({ onClose }: { onClose: () => void }) => {
             title: "Virtual Insanity",
             artist: "Jamiroquai",
           },
-          url: "./public/Music/virtual-insanity.mp3",
+          url: "/Music/virtual-insanity.mp3",
           duration: 322.612245,
         },
         {
@@ -30,7 +30,7 @@ const WebampPlayer = ({ onClose }: { onClose: () => void }) => {
             title: "El Ojo Blindado",
             artist: "Sumo",
           },
-          url: "./public/Music/el-ojo-blindado.mp3",
+          url: "/Music/el-ojo-blindado.mp3",
           duration: 190.093061,
         },
         {
@@ -38,7 +38,7 @@ const WebampPlayer = ({ onClose }: { onClose: () => void }) => {
             title: "House Burning Down",
             artist: "Jimi Hendrix",
           },
-          url: "./public/Music/house-burning-down.mp3",
+          url: "/Music/house-burning-down.mp3",
           duration: 190.093061,
         },
         {
@@ -46,7 +46,7 @@ const WebampPlayer = ({ onClose }: { onClose: () => void }) => {
             title: "Without Me",
             artist: "Eminem",
           },
-          url: "./public/Music/eminem-without-me.mp3",
+          url: "/Music/eminem-without-me.mp3",
           duration: 190.093061,
         },
         {
@@ -54,7 +54,7 @@ const WebampPlayer = ({ onClose }: { onClose: () => void }) => {
             title: "Lo Que Sangra",
             artist: "Soda Estereo",
           },
-          url: "./public/Music/lo-que-sangra.mp3",
+          url: "/Music/lo-que-sangra.mp3",
           duration: 190.093061,
         },
         {
@@ -62,7 +62,7 @@ const WebampPlayer = ({ onClose }: { onClose: () => void }) => {
             title: "Lamento Boliviano",
             artist: "Los Enanitos Verdes",
           },
-          url: "./public/Music/boliviano.mp3",
+          url: "/Music/boliviano.mp3",
           duration: 190.093061,
         },
         {
@@ -70,7 +70,7 @@ const WebampPlayer = ({ onClose }: { onClose: () => void }) => {
             title: "Oh Qué Será?",
             artist: "Willie Colón",
           },
-          url: "./public/Music/oh-que.mp3",
+          url: "/Music/oh-que.mp3",
           duration: 190.093061,
         },
         {
@@ -78,7 +78,7 @@ const WebampPlayer = ({ onClose }: { onClose: () => void }) => {
             title: "Hunting Soul",
             artist: "Hayasii",
           },
-          url: "./public/Music/soul.mp3",
+          url: "/Music/soul.mp3",
           duration: 190.093061,
         },
       ],
